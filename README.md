@@ -1,0 +1,4 @@
+- 👋 Hi, I’m @IngeNat - Natalia. Based in Hamburg.
+- 🌱 I’m currently learning Python and Data Analysis.
+- 📫 How to reach me: @natalia.tobys on insta ;)
+- ⚡ Fun fact: I'm a climber!
