@@ -9,41 +9,46 @@ def clear():
 
 def guess_func(attempts, guess_number):
     print(f"You have {attempts} attempts to guess the number.\n ", end="", flush=True)
-    while True:
-        try:
-            for x in range (attempts):
-                    user_input = input("Make a guess:\n ")
-                    user_guess = int(user_input)
-                    
+    
+        
+    for x in range (attempts):
+
+        while True:
+            user_input = input("Make a guess:\n ")
+            try: 
+                user_guess = int(user_input)
+                break
+            except ValueError:
+                print("Invalid input. Please enter a number (e.g. 10 or 99).")        
                 
-                    if user_guess > guess_number and user_guess in range(1,101):
-                        print ("Too high")
+
+        if user_guess > guess_number and user_guess in range(1,101):
+                    print ("Too high")
                     
                         
-                    elif user_guess < guess_number and user_guess in range(1,101):
-                        print ("Too low")
+        elif user_guess < guess_number and user_guess in range(1,101):
+                    print ("Too low")
                      
                         
-                    elif user_guess == guess_number:
-                        print("Your guess is correct!\n")
-                        break
-                    else:
-                        print("Incorrect input, try again. \n ")
+        elif user_guess == guess_number:
+                    print("Your guess is correct!\n")
+                    break
+        else:
+                    print("Incorrect input, try again. \n ")
 
-                    attempts_left = attempts - x -1
-                    print(f"Attempts left: {attempts_left}")
-            else:
-                print(f"So sorry! Number not guessed. The correct number was: {guess_number}\n")
-            break        
-        except ValueError:
-            print("Invalid input. Please enter a number (e.g. 10 or 99).")
+        attempts_left = attempts - x -1
+        print(f"Attempts left: {attempts_left}")
+    else:
+        print(f"So sorry! Number not guessed. The correct number was: {guess_number}\n")
+              
+
 
 while should_continue:
     print("Welcome to the Number Guessing Game! \n", end="", flush=True)
     time.sleep(2)
     print("I'm thinking about a number from 1 to 100. \n", end="", flush=True)
     guess_number = random.randint(1,100)
-    #print(guess_number)
+    print(guess_number)
     time.sleep(2)
 
     
